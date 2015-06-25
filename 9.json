@@ -1,0 +1,412 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "RedeCredenciada"
+    },
+    "paths": {
+        "/v1/redeCredenciada/consultarRedes": {
+            "get": {
+                "description": "Retorna um array das redes credenciadas\n",
+                "responses": {
+                    "200": {
+                        "description": "Resposta com Sucesso",
+                        "schema": {
+                            "title": "redeCredenciadas",
+                            "type": "array",
+                            "items": {
+                                "title": "redeCredenciada",
+                                "type": "object",
+                                "properties": {
+                                    "codigoRede": {
+                                        "type": "integer"
+                                    },
+                                    "nome": {
+                                        "type": "string"
+                                    },
+                                    "modalidade": {
+                                        "type": "string"
+                                    },
+                                    "contexto": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Recurso não localizado"
+                    },
+                    "500": {
+                        "description": "Erro interno no servidor"
+                    }
+                }
+            }
+        },
+        "/v1/redeCredenciada/consultarEstados": {
+            "get": {
+                "description": "Retorna um array dos estados de onde a rede credenciada informada atua.\n",
+                "parameters": [
+                    {
+                        "name": "codigoRede",
+                        "in": "query",
+                        "description": "Código da Rede Credenciada",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resposta com Sucesso",
+                        "schema": {
+                            "title": "estados",
+                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "single": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/redeCredenciada/consultarMunicipios": {
+            "get": {
+                "description": "Retorna um array dos estados de onde a rede credenciada informada atua.\n",
+                "parameters": [
+                    {
+                        "name": "codigoRede",
+                        "in": "query",
+                        "description": "Código da Rede Credenciada",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resposta com Sucesso",
+                        "schema": {
+                            "title": "estados",
+                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "single": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/redeCredenciada/consultarBairros": {
+            "get": {
+                "description": "Retorna um array dos estados de onde a rede credenciada informada atua.\n",
+                "parameters": [
+                    {
+                        "name": "codigoRede",
+                        "in": "query",
+                        "description": "Código da Rede Credenciada",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resposta com Sucesso",
+                        "schema": {
+                            "title": "estados",
+                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "single": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/redeCredenciada/consultarTiposServicos": {
+            "get": {
+                "description": "Retorna um array dos estados de onde a rede credenciada informada atua.\n",
+                "parameters": [
+                    {
+                        "name": "codigoRede",
+                        "in": "query",
+                        "description": "Código da Rede Credenciada",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resposta com Sucesso",
+                        "schema": {
+                            "title": "estados",
+                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "single": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/redeCredenciada/consultarEspecialidades": {
+            "get": {
+                "description": "Retorna um array dos estados de onde a rede credenciada informada atua.\n",
+                "parameters": [
+                    {
+                        "name": "codigoRede",
+                        "in": "query",
+                        "description": "Código da Rede Credenciada",
+                        "required": true,
+                        "type": "number",
+                        "format": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resposta com Sucesso",
+                        "schema": {
+                            "title": "estados",
+                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "single": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/redeCredenciada/consultarCredenciados": {
+            "get": {
+                "description": "Retorna um array dos estados de onde a rede credenciada informada atua.\n",
+                "parameters": [
+                    {
+                        "name": "codigoRede",
+                        "in": "query",
+                        "description": "Código da Rede Credenciada",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "estado",
+                        "in": "query",
+                        "description": "Sigla do Estado",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "municipio",
+                        "in": "query",
+                        "description": "Nome do Munícipio",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "bairro",
+                        "in": "query",
+                        "description": "Nome do Bairro",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "tipoServico",
+                        "in": "query",
+                        "description": "Tipo de Serviço",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "especialidade",
+                        "in": "query",
+                        "description": "Especialidade",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "posicaoInicial",
+                        "in": "query",
+                        "description": "posicaoInicial",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "posicaoFinal",
+                        "in": "query",
+                        "description": "posicaoFinal",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Resposta com Sucesso",
+                        "schema": {
+                            "title": "credenciados",
+                            "type": "array",
+                            "$ref": "#/definitions/Credenciado"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Credenciado": {
+            "properties": {
+                "codigo": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "nome": {
+                    "type": "string"
+                },
+                "nomeFantasia": {
+                    "type": "string"
+                },
+                "documento": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "homePage": {
+                    "type": "string"
+                },
+                "especialidade": {
+                    "type": "string"
+                },
+                "vip": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "estabelecimentos": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Estabelecimento"
+                    }
+                }
+            }
+        },
+        "Estabelecimento": {
+            "properties": {
+                "endereco": {
+                    "$ref": "#/definitions/Endereco"
+                },
+                "distancia": {
+                    "type": "string"
+                },
+                "telefones": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Telefone"
+                    }
+                },
+                "fax": {
+                    "type": "string"
+                },
+                "equipamentosEspeciais": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Endereco": {
+            "properties": {
+                "tipo": {
+                    "type": "string"
+                },
+                "cep": {
+                    "type": "string"
+                },
+                "logradouro": {
+                    "type": "string"
+                },
+                "numero": {
+                    "type": "string"
+                },
+                "complemento": {
+                    "type": "string"
+                },
+                "bairro": {
+                    "type": "string"
+                },
+                "municipio": {
+                    "type": "string"
+                },
+                "estado": {
+                    "type": "string"
+                },
+                "courrier": {
+                    "type": "string"
+                },
+                "coordenada": {
+                    "$ref": "#/definitions/Coordenada"
+                }
+            }
+        },
+        "Telefone": {
+            "properties": {
+                "telefone": {
+                    "type": "string"
+                }
+            }
+        },
+        "Coordenada": {
+            "properties": {
+                "latitude": {
+                    "type": "string"
+                },
+                "longitude": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
